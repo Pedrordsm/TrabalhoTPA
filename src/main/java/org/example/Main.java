@@ -11,6 +11,8 @@ public class Main {
         l1.adicionar(a1);
         l1.contemElemento(a1);
         l1.contemElemento(a2);
+        l1.remover(a1);
+        l.remover(a1);
         System.out.println(l);
         System.out.println(l1);
     }

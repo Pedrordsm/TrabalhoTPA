@@ -94,7 +94,34 @@ public class ListaEncadeadaComComparator<T> {
     public boolean remover(T elem){
         No<T> aux = this.prim;
         No<T> ant = null;
-        while(aux != null){
+        if (this.ordenada){
+            while (aux != null) {
+                int cmp = comparador.compare(aux.getValor(), elem);
+
+                if (cmp == 0) {
+                    if (aux == this.prim) {
+                        this.prim = this.prim.getProx();
+                        if (aux == this.ult) {
+                            this.ult = null;
+                        }
+                    } else {
+                        ant.setProx(aux.getProx());
+                        if (aux == this.ult) {
+                            this.ult = ant;
+                        }
+                    }
+                    this.quantidade--;
+                    return true;
+                } else if (cmp > 0) {
+                    return false;
+                }
+
+                ant = aux;
+                aux = aux.getProx();
+            }
+            return false;
+        }else {
+            while(aux != null){
             if (aux.getValor().equals(elem)){
                 if(aux == this.prim){
                     this.prim = this.prim.getProx();
@@ -112,7 +139,9 @@ public class ListaEncadeadaComComparator<T> {
             ant = aux;
             aux = aux.getProx();
         }
-        return false;
+            return false;
+        }
+
     }
 
 
