@@ -3,23 +3,14 @@ package org.example;
 public class ListaEncadeada<T>{
     private No<T> prim, ult;
     private int quant;
-    private final boolean ordenada;
 
-    public ListaEncadeada(boolean ehOrdenada){
+    public ListaEncadeada(){
         this.prim=this.ult=null;
         this.quant=0;
-        this.ordenada = ehOrdenada;
+
     }
 
     public void inserirElemento(T elem) {
-        if (this.ordenada == false) {
-            inserirElementoNaoOrd(elem);
-        } else {
-            inserirElementoOrd(elem);
-        }
-    }
-
-    public void inserirElementoNaoOrd(T elem){
         No<T> novo = new No<T>(elem);
         if (this.prim == null) {
             this.prim = novo;
@@ -28,36 +19,6 @@ public class ListaEncadeada<T>{
             this.ult.setProx(novo);
             this.ult = novo;
         }
-        this.quant++;
-        }
-
-    public void inserirElementoOrd(T elem){
-        No<T> novo = new No<T>(elem);
-        No<T> atual,ant;
-        atual = this.prim;
-        ant = null;
-        if (this.prim == null){
-            this.prim = novo;
-            this.ult = novo;
-        }
-        /*else{
-            while(atual != null && atual.getValor().compareTo(elem) < 0){
-                ant = atual;
-                atual = atual.getProx();
-            }
-            if (ant == null){
-                novo.setProx(this.prim);
-                this.prim = novo;
-            }
-            else if (atual == null){
-                this.ult.setProx(novo);
-                this.ult = novo;
-            }
-            else{
-                ant.setProx(novo);
-                novo.setProx(atual);
-            }
-    }*/
         this.quant++;
     }
 

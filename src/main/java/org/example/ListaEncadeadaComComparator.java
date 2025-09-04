@@ -16,7 +16,7 @@ public class ListaEncadeadaComComparator<T> {
 
     }
 
-    public void inserirElemento(T elem) {
+    public void adicionar(T elem) {
         if (this.ordenada == false) {
             inserirElementoNaoOrd(elem);
         } else {
@@ -64,16 +64,58 @@ public class ListaEncadeadaComComparator<T> {
         }
         this.quantidade++;
     }
+    public T pesquisar(T valor){
+        return valor;
+    }
 
-    public boolean contemElemento(T elem){
+    public boolean contemElemento(T elem) {
         No<T> aux = this.prim;
-        while (aux != null){
-            if(aux.getValor().equals(elem))
+        if (this.ordenada) {
+            while (aux != null) {
+                int cmp = comparador.compare(aux.getValor(), elem);
+                System.out.println(cmp);
+                if (cmp == 0) {
+                    return true;
+                } else if (cmp > 0) {
+                    return false;
+                }
+                aux = aux.getProx();
+        }
+        }else{
+                while (aux != null) {
+                    if (aux.getValor().equals(elem))
+                        return true;
+                    aux = aux.getProx();
+                }
+            }
+            return false;
+        }
+
+    public boolean remover(T elem){
+        No<T> aux = this.prim;
+        No<T> ant = null;
+        while(aux != null){
+            if (aux.getValor().equals(elem)){
+                if(aux == this.prim){
+                    this.prim = this.prim.getProx();
+                    if (aux == this.ult){
+                        this.ult = null;
+                    }
+                }else{
+                    ant.setProx(aux.getProx());
+                    if(aux == this.ult)
+                        this.ult = ant;
+                }
+                this.quantidade--;
                 return true;
+            }
+            ant = aux;
             aux = aux.getProx();
         }
         return false;
     }
+
+
     @Override
     public String toString(){
         No<T> aux = this.prim;
