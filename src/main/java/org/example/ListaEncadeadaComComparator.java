@@ -65,15 +65,35 @@ public class ListaEncadeadaComComparator<T> {
         this.quantidade++;
     }
     public T pesquisar(T valor){
-        return valor;
+        if (this.prim == null) return null;
+        No<T> aux = this.prim;
+        if (this.ordenada){
+           while (aux != null){
+               int cmp = comparador.compare(aux.getValor(), valor);
+               if (cmp == 0){
+                   return valor;
+               } else if (cmp > 0){
+                   return null;
+               }
+               aux = aux.getProx();
+           }
+        }
+        else {
+            while (aux != null) {
+                if (aux.getValor().equals(valor))
+                    return valor;
+                aux = aux.getProx();
+            }
+        }
+        return null;
     }
 
     public boolean contemElemento(T elem) {
+        if (this.prim == null) return false;
         No<T> aux = this.prim;
         if (this.ordenada) {
             while (aux != null) {
                 int cmp = comparador.compare(aux.getValor(), elem);
-                System.out.println(cmp);
                 if (cmp == 0) {
                     return true;
                 } else if (cmp > 0) {
@@ -92,12 +112,12 @@ public class ListaEncadeadaComComparator<T> {
         }
 
     public boolean remover(T elem){
+        if (this.prim == null) return false;
         No<T> aux = this.prim;
         No<T> ant = null;
         if (this.ordenada){
             while (aux != null) {
                 int cmp = comparador.compare(aux.getValor(), elem);
-
                 if (cmp == 0) {
                     if (aux == this.prim) {
                         this.prim = this.prim.getProx();
