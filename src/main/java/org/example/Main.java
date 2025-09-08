@@ -1,12 +1,13 @@
 package org.example;
-
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        ListaEncadeadaComComparator<Aluno> l = new ListaEncadeadaComComparator<Aluno>(true, new ComparadorAlunoPorNome());
+       /* ListaEncadeadaComComparator<Aluno> l = new ListaEncadeadaComComparator<Aluno>(true, new ComparadorAlunoPorNome());
         ListaEncadeadaComComparator<Aluno> l1 = new ListaEncadeadaComComparator<Aluno>(true, new ComparadorAlunoPorMatricula());
-        Aluno a1 = new Aluno(1, "Zé", 50);
-        Aluno a2 = new Aluno(2, "Mané", 50);
-        Aluno a3 = new Aluno(3, "josep", 3);
+        Aluno a1 = new Aluno(1, "Zé");
+        Aluno a2 = new Aluno(2, "Mané");
+        Aluno a3 = new Aluno(3, "josep");
+
         l.adicionar(a1);
         l.adicionar(a2);
         l1.adicionar(a1);
@@ -19,6 +20,24 @@ public class Main {
         System.out.println(l.pesquisar(a3));
 
         System.out.println(l);
-        System.out.println(l1);
+        System.out.println(l1);*/
+        //GeradorArquivosOrdenados.gerarArquivo();
+        //GeradorArquivosBalanceados.gerarArquivo();
+        //LeitorArquivos.LerArq();
+        Scanner s = new Scanner(System.in);
+        int opcao = -1;
+        while (opcao != 0) {
+            if (opcao == 1) {
+                System.out.println("adicionar aluno");
+            } else if (opcao == 2) {
+                System.out.println("remover aluno");
+            } else if (opcao == 3) {
+                System.out.println("buscar aluno");
+            } else if (opcao == 4) {
+                System.out.println("listar aluno");
+            }
+            System.out.print("Digite a opção: ");
+            opcao = s.nextInt();
+        }
     }
 }

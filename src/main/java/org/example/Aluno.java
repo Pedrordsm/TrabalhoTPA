@@ -3,9 +3,9 @@ package org.example;
 public class Aluno implements Comparable<Aluno>{
     private int matricula;
     private String nome;
-    private int nota;
+    private double nota;
 
-    public Aluno (int m, String n, int no){
+    public Aluno (int m, String n, double no){
         this.matricula = m;
         this.nome = n;
         this.nota = no;
