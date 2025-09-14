@@ -16,18 +16,19 @@ public class Main {
 
             while (opcao != 0) {
                 if (opcao == 1) {
-                    System.out.println("Adicionar aluno");
-
-                    System.out.println("Digite a matricula do Aluno :");
+                    System.out.println("Adicionar aluno!");
+                    System.out.println("Matricula!");
                     int matricula = s.nextInt();
+                    // S.NEXTLINE() PARA CONSUMIR O \n
+                    s.nextLine();
 
+                    System.out.println("Nome");
+                    String name = s.nextLine();
 
-                    System.out.println("Digite o nome do Aluno :");
-                    String nome = s.nextLine();
-
-
-                    System.out.println("Digite a nota do Aluno :");
-                    double nota = s.nextDouble();
+                    System.out.println("Nota");
+                    double grade = s.nextDouble();
+                    // S.NEXTLINE() PARA CONSUMIR O \n
+                    s.nextLine();
 
 
 
