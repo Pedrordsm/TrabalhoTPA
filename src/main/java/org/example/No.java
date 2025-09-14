@@ -18,7 +18,7 @@ public class No<T> {
         return this.prox;
     }
 
-    public Object getValor(){
+    public T getValor(){
         return this.valor;
     }
 }

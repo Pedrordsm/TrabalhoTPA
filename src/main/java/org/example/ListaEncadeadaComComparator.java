@@ -71,7 +71,7 @@ public class ListaEncadeadaComComparator<T> {
            while (aux != null){
                int cmp = comparador.compare(aux.getValor(), valor);
                if (cmp == 0){
-                   return (T) aux.getValor();
+                   return aux.getValor();
                } else if (cmp > 0){
                    return null;
                }
@@ -81,7 +81,7 @@ public class ListaEncadeadaComComparator<T> {
         else {
             while (aux != null) {
                 if (aux.getValor().equals(valor))
-                    return (T) aux.getValor();
+                    return aux.getValor();
                 aux = aux.getProx();
             }
         }
