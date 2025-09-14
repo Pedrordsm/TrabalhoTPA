@@ -73,7 +73,11 @@ public class Main {
                     double nota = s.nextDouble();
                     // S.NEXTLINE() PARA CONSUMIR O \n
                     s.nextLine();
-
+                    if (l.contemElemento(new Aluno(matricula,nome, nota))){
+                        System.out.println("Elemento na lista.");
+                    }else{
+                        System.out.println("Elemento não esta na lista.");
+                    }
 
                 } else if (opcao == 4) {
                     System.out.println("Pesquisar aluno");
