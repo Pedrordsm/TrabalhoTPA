@@ -22,13 +22,14 @@ public class Main {
                     int matricula = s.nextInt();
 
 
-                    System.out.println("Digite o nome do Aluno :");
+                    System.out.println("Digite o nome do Aluno : ");
                     String nome = s.nextLine();
 
 
                     System.out.println("Digite a nota do Aluno :");
                     double nota = s.nextDouble();
 
+                    l.adicionar(new Aluno(matricula,nome,nota));
 
 
                 } else if (opcao == 2) {
@@ -64,6 +65,7 @@ public class Main {
                     System.out.println("Digite a nota do Aluno :");
                     double nota = s.nextDouble();
 
+                    System.out.println(l.pesquisar(new Aluno(matricula,nome, nota)).toString());
 
                 }
                 menu.mostrarMenu();
