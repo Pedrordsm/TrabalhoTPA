@@ -98,7 +98,6 @@ public class Main {
 
                 }catch (NullPointerException e){
                     System.out.println("Elemento não encontrado.");
-                    s.nextLine();
 
                 } catch (Exception e) {
                     System.out.println("Erro ao executar o menu!");
