@@ -2,7 +2,8 @@ package org.example;
 
 public class Menu {
     public void mostrarMenu(){
-        System.out.println("Digite uma das opcoes abaixo\n"              +
+        System.out.println("Digite uma das opcoes abaixo\n" +
+                            "0 - Sair"              +
                              "1 - Inserir elemento\n"                    +
                                 "2 - Deletar elemento\n"                 +
                                     "3 - Buscar elemento\n"              +
