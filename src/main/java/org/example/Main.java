@@ -31,7 +31,9 @@ public class Main {
                     // S.NEXTLINE() PARA CONSUMIR O \n
                     s.nextLine();
 
-                   System.out.println(l.pesquisar(new Aluno(matricula,nome, nota)).toString());
+                    l.adicionar(new Aluno(matricula , nome , nota));
+
+
 
                 } else if (opcao == 2) {
                     System.out.println("Remover aluno");
