@@ -8,6 +8,47 @@ public class Main {
         Aluno a2 = new Aluno(2, "Mané", 12331);
         Aluno a3 = new Aluno(3, "josep",  123);
 
+        try {
+            Menu menu = new Menu();
+            Scanner s = new Scanner(System.in);
+            menu.mostrarMenu();
+            int opcao = s.nextInt();
+
+            while (opcao != 0) {
+                if (opcao == 1) {
+                    System.out.println("Adicionar aluno");
+
+                    System.out.println("Digite a matricula do Aluno :");
+                    int matricula = s.nextInt();
+
+
+                    System.out.println("Digite o nome do Aluno :");
+                    String nome = s.nextLine();
+
+
+                    System.out.println("Digite a nota do Aluno :");
+                    double nota = s.nextDouble();
+
+                    l1
+
+                } else if (opcao == 2) {
+                    System.out.println("Remover aluno");
+
+                } else if (opcao == 3) {
+                    System.out.println("Buscar aluno");
+
+                } else if (opcao == 4) {
+                    System.out.println("Pesquisar aluno");
+
+                }
+                menu.mostrarMenu();
+                opcao = s.nextInt();
+
+            }
+        }catch (Exception e){
+            System.out.println("Erro ao executar o menu!");
+        }
+
         //linkedList.carregarDados();
 
         l.adicionar(a1);
