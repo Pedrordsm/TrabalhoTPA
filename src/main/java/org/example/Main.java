@@ -18,18 +18,20 @@ public class Main {
                 if (opcao == 1) {
                     System.out.println("Adicionar aluno");
 
-                    System.out.println("Matricula!");
+                    System.out.println("Digite a Matricula do Aluno: ");
                     int matricula = s.nextInt();
                     // S.NEXTLINE() PARA CONSUMIR O \n
                     s.nextLine();
 
-                    System.out.println("Nome");
+                    System.out.println("Digite o Nome do Aluno :");
                     String name = s.nextLine();
 
-                    System.out.println("Nota");
+                    System.out.println("Digite a Nota do Aluno :");
                     double grade = s.nextDouble();
                     // S.NEXTLINE() PARA CONSUMIR O \n
                     s.nextLine();
+
+                    System.out.println(l.pesquisar(new Aluno(matricula,nome, nota)).toString());
 
                 } else if (opcao == 2) {
                     System.out.println("Remover aluno");
