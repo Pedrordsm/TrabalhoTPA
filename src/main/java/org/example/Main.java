@@ -29,16 +29,41 @@ public class Main {
                     System.out.println("Digite a nota do Aluno :");
                     double nota = s.nextDouble();
 
-                    l1
+
 
                 } else if (opcao == 2) {
                     System.out.println("Remover aluno");
+
+                    System.out.println("Digite a matricula do Aluno :");
+                    int matricula = s.nextInt();
+
+
+                    System.out.println("Digite o nome do Aluno :");
+                    String nome = s.nextLine();
+
+
+                    System.out.println("Digite a nota do Aluno :");
+                    double nota = s.nextDouble();
+
+
 
                 } else if (opcao == 3) {
                     System.out.println("Buscar aluno");
 
                 } else if (opcao == 4) {
                     System.out.println("Pesquisar aluno");
+
+                    System.out.println("Digite a matricula do Aluno :");
+                    int matricula = s.nextInt();
+
+
+                    System.out.println("Digite o nome do Aluno :");
+                    String nome = s.nextLine();
+
+
+                    System.out.println("Digite a nota do Aluno :");
+                    double nota = s.nextDouble();
+
 
                 }
                 menu.mostrarMenu();
