@@ -16,8 +16,9 @@ public class ListaEncadeadaComComparator<T> {
 
     }
 
+    // ADICIONAR
     public void adicionar(T elem) {
-        if (this.ordenada == false) {
+        if (!this.ordenada) {
             inserirElementoNaoOrd(elem);
         } else {
             inserirElementoOrd(elem);
@@ -64,84 +65,122 @@ public class ListaEncadeadaComComparator<T> {
         }
         this.quantidade++;
     }
+
+    // PESQUISAR
     public T pesquisar(T valor){
         if (this.prim == null) return null;
-        No<T> aux = this.prim;
         if (this.ordenada){
-           while (aux != null){
-           int cmp = comparador.compare(aux.getValor(), valor);
-               if (cmp == 0){
-                   return aux.getValor();
-               } else if (cmp > 0){
-                   return null;
-               }
-               aux = aux.getProx();
-           }
+            pesquisarOrd(valor);
         }
         else {
-            while (aux != null) {
-                if (aux.getValor().equals(valor))
-                    return aux.getValor();
-                aux = aux.getProx();
-            }
+            pesquisarNaoOrd(valor);
         }
         return null;
     }
 
+    public T pesquisarOrd(T valor) {
+        No<T> aux = this.prim;
+        while (aux != null){
+            int cmp = comparador.compare(aux.getValor(), valor);
+            if (cmp == 0){
+                return aux.getValor();
+            } else if (cmp > 0){
+                return null;
+            }
+            aux = aux.getProx();
+        }
+        return null;
+    }
+
+    public T pesquisarNaoOrd(T valor) {
+        No<T> aux = this.prim;
+        while (aux != null) {
+            if (aux.getValor().equals(valor))
+                return aux.getValor();
+            aux = aux.getProx();
+        }
+        return null;
+    }
+
+
+    // Contem Elemento
     public boolean contemElemento(T elem) {
         if (this.prim == null) return false;
-        No<T> aux = this.prim;
         if (this.ordenada) {
-            while (aux != null) {
-                int cmp = comparador.compare(aux.getValor(), elem);
-                if (cmp == 0) {
-                    return true;
-                } else if (cmp > 0) {
-                    return false;
-                }
-                aux = aux.getProx();
+            return contemElementoOrd(elem);
+        } else {
+            return contemElementoNaoOrd(elem);
         }
-        }else{
-                while (aux != null) {
-                    if (aux.getValor().equals(elem))
-                        return true;
-                    aux = aux.getProx();
-                }
-            }
-            return false;
-        }
+    }
 
+    public boolean contemElementoOrd(T elem) {
+        No<T> aux = this.prim;
+        while (aux != null) {
+            int cmp = comparador.compare(aux.getValor(), elem);
+            if (cmp == 0) {
+                return true;
+            } else if (cmp > 0) {
+                return false;
+            }
+            aux = aux.getProx();
+        }
+        return false;
+    }
+
+    public boolean contemElementoNaoOrd(T elem) {
+        No<T> aux = this.prim;
+        while (aux != null) {
+            if (aux.getValor().equals(elem))
+                return true;
+            aux = aux.getProx();
+        }
+        return false;
+    }
+
+    // REMOVER ELEMENTO
     public boolean remover(T elem){
         if (this.prim == null) return false;
+
+        if (this.ordenada){
+            return removerOrd(elem);
+        }else {
+            return removerNaoOrd(elem);
+        }
+    }
+
+    public boolean removerOrd(T elem) {
         No<T> aux = this.prim;
         No<T> ant = null;
-        if (this.ordenada){
-            while (aux != null) {
-                int cmp = comparador.compare(aux.getValor(), elem);
-                if (cmp == 0) {
-                    if (aux == this.prim) {
-                        this.prim = this.prim.getProx();
-                        if (aux == this.ult) {
-                            this.ult = null;
-                        }
-                    } else {
-                        ant.setProx(aux.getProx());
-                        if (aux == this.ult) {
-                            this.ult = ant;
-                        }
+        while (aux != null) {
+            int cmp = comparador.compare(aux.getValor(), elem);
+            if (cmp == 0) {
+                if (aux == this.prim) {
+                    this.prim = this.prim.getProx();
+                    if (aux == this.ult) {
+                        this.ult = null;
                     }
-                    this.quantidade--;
-                    return true;
-                } else if (cmp > 0) {
-                    return false;
+                } else {
+                    ant.setProx(aux.getProx());
+                    if (aux == this.ult) {
+                        this.ult = ant;
+                    }
                 }
-
-                ant = aux;
-                aux = aux.getProx();
+                this.quantidade--;
+                return true;
+            } else if (cmp > 0) {
+                return false;
             }
-            return false;
-        }else {
-            while(aux != null){
+
+            ant = aux;
+            aux = aux.getProx();
+        }
+        return false;
+    }
+
+    public boolean removerNaoOrd(T elem) {
+        No<T> aux = this.prim;
+        No<T> ant = null;
+        while(aux != null){
             if (aux.getValor().equals(elem)){
                 if(aux == this.prim){
                     this.prim = this.prim.getProx();
@@ -159,9 +198,7 @@ public class ListaEncadeadaComComparator<T> {
             ant = aux;
             aux = aux.getProx();
         }
-            return false;
-        }
-
+        return false;
     }
 
 
