@@ -16,7 +16,8 @@ public class Main {
 
             while (opcao != 0) {
                 if (opcao == 1) {
-                    System.out.println("Adicionar aluno!");
+                    System.out.println("Adicionar aluno");
+
                     System.out.println("Matricula!");
                     int matricula = s.nextInt();
                     // S.NEXTLINE() PARA CONSUMIR O \n
@@ -29,8 +30,6 @@ public class Main {
                     double grade = s.nextDouble();
                     // S.NEXTLINE() PARA CONSUMIR O \n
                     s.nextLine();
-
-
 
                 } else if (opcao == 2) {
                     System.out.println("Remover aluno");
@@ -65,6 +64,7 @@ public class Main {
                     System.out.println("Digite a nota do Aluno :");
                     double nota = s.nextDouble();
 
+                    System.out.println(l.pesquisar(new Aluno(matricula,nome, nota)).toString());
 
                 }
                 menu.mostrarMenu();
