@@ -70,12 +70,11 @@ public class ListaEncadeadaComComparator<T> {
     public T pesquisar(T valor){
         if (this.prim == null) return null;
         if (this.ordenada){
-            pesquisarOrd(valor);
+            return pesquisarOrd(valor);
         }
         else {
-            pesquisarNaoOrd(valor);
+            return pesquisarNaoOrd(valor);
         }
-        return null;
     }
 
     public T pesquisarOrd(T valor) {

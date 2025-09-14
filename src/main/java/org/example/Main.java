@@ -95,8 +95,7 @@ public class Main {
 
                 }
 
-
-                }catch (NullPointerException e){
+                } catch (NullPointerException e){
                     System.out.println("Elemento não encontrado.");
 
                 } catch (Exception e) {
