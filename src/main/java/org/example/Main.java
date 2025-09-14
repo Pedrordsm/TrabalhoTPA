@@ -5,7 +5,7 @@ public class Main {
         ListaEncadeadaComComparator<Aluno> l = new ListaEncadeadaComComparator<Aluno>(true, new ComparadorAlunoPorNome());
         ListaEncadeadaComComparator<Aluno> l1 = new ListaEncadeadaComComparator<Aluno>(true, new ComparadorAlunoPorMatricula());
         Aluno a1 = new Aluno(1, "Zé",12);
-        Aluno a2 = new Aluno(2, "Mané", 12331);
+        Aluno a2 = new Aluno(2, "mané", 12331);
         Aluno a3 = new Aluno(3, "josep",  123);
 
         try {
