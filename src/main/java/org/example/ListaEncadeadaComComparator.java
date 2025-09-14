@@ -6,13 +6,13 @@ public class ListaEncadeadaComComparator<T> {
     private No<T> prim,ult;
     private int quantidade;
     private final boolean ordenada;
-    private Comparator<Object> comparador;
+    private Comparator<T> comparador;
 
     public ListaEncadeadaComComparator(boolean ehOrdenada, Comparator<T> comparador){
         this.prim=this.ult = null;
         this.quantidade = 0;
         this.ordenada = ehOrdenada;
-        this.comparador = (Comparator<Object>) comparador;
+        this.comparador = comparador;
 
     }
 
@@ -69,7 +69,7 @@ public class ListaEncadeadaComComparator<T> {
         No<T> aux = this.prim;
         if (this.ordenada){
            while (aux != null){
-               int cmp = comparador.compare(aux.getValor(), valor);
+           int cmp = comparador.compare(aux.getValor(), valor);
                if (cmp == 0){
                    return aux.getValor();
                } else if (cmp > 0){

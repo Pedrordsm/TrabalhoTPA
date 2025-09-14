@@ -8,6 +8,8 @@ public class Main {
         Aluno a2 = new Aluno(2, "Mané", 12331);
         Aluno a3 = new Aluno(3, "josep",  123);
 
+        //linkedList.carregarDados();
+
         l.adicionar(a1);
         l.adicionar(a2);
         l1.adicionar(a1);
