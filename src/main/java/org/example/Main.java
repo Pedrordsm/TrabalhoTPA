@@ -24,47 +24,65 @@ public class Main {
                     s.nextLine();
 
                     System.out.println("Digite o Nome do Aluno :");
-                    String name = s.nextLine();
+                    String nome = s.nextLine();
 
                     System.out.println("Digite a Nota do Aluno :");
-                    double grade = s.nextDouble();
+                    double nota = s.nextDouble();
                     // S.NEXTLINE() PARA CONSUMIR O \n
                     s.nextLine();
 
-                    System.out.println(l.pesquisar(new Aluno(matricula,nome, nota)).toString());
+                   System.out.println(l.pesquisar(new Aluno(matricula,nome, nota)).toString());
 
                 } else if (opcao == 2) {
                     System.out.println("Remover aluno");
 
-                    System.out.println("Digite a matricula do Aluno :");
+                    System.out.println("Digite a Matricula do Aluno: ");
                     int matricula = s.nextInt();
+                    // S.NEXTLINE() PARA CONSUMIR O \n
+                    s.nextLine();
 
-
-                    System.out.println("Digite o nome do Aluno :");
+                    System.out.println("Digite o Nome do Aluno :");
                     String nome = s.nextLine();
 
-
-                    System.out.println("Digite a nota do Aluno :");
+                    System.out.println("Digite a Nota do Aluno :");
                     double nota = s.nextDouble();
+                    // S.NEXTLINE() PARA CONSUMIR O \n
+                    s.nextLine();
 
 
 
                 } else if (opcao == 3) {
                     System.out.println("Buscar aluno");
 
+                    System.out.println("Digite a Matricula do Aluno: ");
+                    int matricula = s.nextInt();
+                    // S.NEXTLINE() PARA CONSUMIR O \n
+                    s.nextLine();
+
+                    System.out.println("Digite o Nome do Aluno :");
+                    String nome = s.nextLine();
+
+                    System.out.println("Digite a Nota do Aluno :");
+                    double nota = s.nextDouble();
+                    // S.NEXTLINE() PARA CONSUMIR O \n
+                    s.nextLine();
+
+
                 } else if (opcao == 4) {
                     System.out.println("Pesquisar aluno");
 
-                    System.out.println("Digite a matricula do Aluno :");
+                    System.out.println("Digite a Matricula do Aluno: ");
                     int matricula = s.nextInt();
+                    // S.NEXTLINE() PARA CONSUMIR O \n
+                    s.nextLine();
 
-
-                    System.out.println("Digite o nome do Aluno :");
+                    System.out.println("Digite o Nome do Aluno :");
                     String nome = s.nextLine();
 
-
-                    System.out.println("Digite a nota do Aluno :");
+                    System.out.println("Digite a Nota do Aluno :");
                     double nota = s.nextDouble();
+                    // S.NEXTLINE() PARA CONSUMIR O \n
+                    s.nextLine();
 
                     System.out.println(l.pesquisar(new Aluno(matricula,nome, nota)).toString());
 
