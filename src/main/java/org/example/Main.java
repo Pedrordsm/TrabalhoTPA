@@ -1,4 +1,5 @@
 package org.example;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -8,13 +9,15 @@ public class Main {
         Aluno a2 = new Aluno(2, "mané", 12331);
         Aluno a3 = new Aluno(3, "josep",  123);
 
-        try {
-            Menu menu = new Menu();
-            Scanner s = new Scanner(System.in);
-            menu.mostrarMenu();
-            int opcao = s.nextInt();
 
-            while (opcao != 0) {
+        Menu menu = new Menu();
+        Scanner s = new Scanner(System.in);
+        int opcao =-1;
+            do {
+
+                try {
+                menu.mostrarMenu();
+                opcao = s.nextInt();
                 if (opcao == 1) {
                     System.out.println("Adicionar aluno");
 
@@ -50,6 +53,8 @@ public class Main {
                     double nota = s.nextDouble();
                     // S.NEXTLINE() PARA CONSUMIR O \n
                     s.nextLine();
+
+                    l.remover(l.pesquisar(new Aluno(matricula,nome,nota)));
 
 
 
@@ -89,13 +94,18 @@ public class Main {
                     System.out.println(l.pesquisar(new Aluno(matricula,nome, nota)).toString());
 
                 }
-                menu.mostrarMenu();
-                opcao = s.nextInt();
 
-            }
-        }catch (Exception e){
-            System.out.println("Erro ao executar o menu!");
-        }
+
+                }catch (NullPointerException e){
+                    System.out.println("Elemento não encontrado.");
+
+                } catch (Exception e) {
+                    System.out.println("Erro ao executar o menu!");
+                }finally {
+                    s.nextLine();
+                }
+            }while (opcao != 0);
+
 
         //linkedList.carregarDados();
 
