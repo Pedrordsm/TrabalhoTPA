@@ -7,7 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 public class GeradordeArquivos {
-    private static int NUM_REGISTROS = 100;
+    private static int NUM_REGISTROS = 100000;
     private static String NOME_ARQUIVO = "alunosOrdenados.txt";
 
     private static final String[] PRIMEIRO_NOMES = {"Ana", "Bruno", "Carlos", "Daniela", "Eduardo", "Fernanda",
