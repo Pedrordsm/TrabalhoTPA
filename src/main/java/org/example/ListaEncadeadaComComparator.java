@@ -6,7 +6,7 @@ public class ListaEncadeadaComComparator<T> {
     private No<T> prim,ult;
     private int quantidade;
     private final boolean ordenada;
-    private Comparator<T> comparador;
+    private final Comparator<T> comparador;
 
     public ListaEncadeadaComComparator(boolean ehOrdenada, Comparator<T> comparador){
         this.prim=this.ult = null;
@@ -16,6 +16,17 @@ public class ListaEncadeadaComComparator<T> {
 
     }
 
+    public void listarElem(){
+        No<T> aux = this.prim;
+        if(aux == null){
+            System.out.println("Nenhum elemento na lista");
+        }else {
+            while(aux != null){
+                System.out.println(aux.getValor());
+                aux = aux.getProx();
+            }
+        }
+    }
     // ADICIONAR
     public void adicionar(T elem) {
         if (!this.ordenada) {

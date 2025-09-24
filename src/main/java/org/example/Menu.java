@@ -8,6 +8,7 @@ public class Menu {
                                 "2 - Deletar elemento\n"                 +
                                     "3 - Buscar elemento\n"              +
                                         "4 - Pesquisar elemento\n"       +
+                                            "5 - Listar elementos\n"      +
                                             "Digite a opção desejada: "  );
     }
 }

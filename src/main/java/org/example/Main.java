@@ -7,6 +7,17 @@ public class Main {
         ListaEncadeadaComComparator<Aluno> l = new ListaEncadeadaComComparator<Aluno>(true, new ComparadorAlunoPorNome());
         ListaEncadeadaComComparator<Aluno> l1 = new ListaEncadeadaComComparator<Aluno>(true, new ComparadorAlunoPorMatricula());
 
+        l.adicionar(new Aluno(1, "Ana Silva", 8.5));
+        l.adicionar(new Aluno(2, "Carlos Oliveira", 7.2));
+        l.adicionar(new Aluno(3, "Junior", 4.0));
+        l.adicionar(new Aluno(4, "Maria Santos", 9.1));
+        l.adicionar(new Aluno(5, "Pedro Costa", 6.8));
+        l.adicionar(new Aluno(6, "Juliana Lima", 8.9));
+        l.adicionar(new Aluno(7, "Fernando Souza", 5.5));
+        l.adicionar(new Aluno(8, "Patrícia Rocha", 7.8));
+        l.adicionar(new Aluno(9, "Ricardo Alves", 6.2));
+        l.adicionar(new Aluno(10, "Amanda Ferreira", 9.4));
+
         Menu menu = new Menu();
         Scanner s = new Scanner(System.in);
         int opcao =-1;
@@ -94,7 +105,11 @@ public class Main {
 
                     System.out.println(l.pesquisar(new Aluno(matricula,nome, nota)).toString());
 
+                } else if (opcao == 5) {
+                    l.listarElem();
                 }
+
+
 
                 } catch (NullPointerException e){
                     System.out.println("Elemento não encontrado.");
